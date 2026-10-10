@@ -2,17 +2,18 @@
 
 The lab uses two VMs on one hypervisor switch connected to MikroTik `ether3`. A preliminary exercise asks for two links per VM and another network between them, but the implementation report describes one shared subnet. The actual interface layout and NAT mappings require a RouterOS export; the requested topology must not be presented as the observed topology.
 
-All addresses below are documentation aliases, not deployment instructions. The underlay uses documentation range `192.0.2.0/24`; the overlay uses a substituted private subnet. Images hide addresses rather than replace their pixels with fictional values.
+The private addresses and generic host/account names below are the lab values visible in the screenshots. They help match logs, rules and router state. Lab WAN endpoints are withheld.
 
-| Role | Public documentation alias | Documented role / ports |
+| Role | Lab address / identity | Function |
 | --- | --- | --- |
-| Router LAN | `192.0.2.1` | Syslog sender and SSH automation target |
-| VM1 | `192.0.2.10` | Apache/DVWA; administrative SSH TCP 2222 |
-| VM2 | `192.0.2.20` | Proxy, IDS, log stack and response; SSH tunnel target documented on TCP 2223 |
-| VM1 WireGuard | `10.77.0.1/24` | SSH destination over the overlay |
-| VM2 WireGuard | `10.77.0.2/24` | Listener UDP 51820; VM1 initiates to VM2 underlay |
-| Public ingress / test sources | `PUBLIC_ENDPOINT`, `EXTERNAL_SOURCE_IP` | Original public addresses removed; NAT endpoints not verified |
-| Identities | `LAB_ADMIN`, `ROUTER_AUTOMATION_USER`, `DECOY_USER` | Substituted accounts; no real credentials included |
+| Router LAN | `192.168.3.1` | Syslog sender and SSH automation target |
+| VM1 (`test-1`) | `192.168.3.253` | Apache/DVWA; administrative SSH TCP 2222 |
+| VM2 (`test-2`) | `192.168.3.254` | Proxy, IDS, log stack and response; SSH tunnel target TCP 2223 in the setup notes |
+| VM1 WireGuard | `10.10.10.1/24` | SSH destination over the overlay |
+| VM2 WireGuard | `10.10.10.2/24` | Listener UDP 51820 |
+| Public ingress | `PUBLIC_ENDPOINT` | WAN address withheld; NAT mappings need a RouterOS export |
+| Accounts | `administrator`, `user@test-mikrotik` | Generic lab system identities |
+| Decoy accounts | `backup_svc`, `bkpadmin` | Fictional credentials in the decoy file; password values masked |
 
 ## Traffic flows
 
@@ -20,7 +21,7 @@ External web requests reach VM2's Nginx reverse proxy and ModSecurity before bei
 
 MikroTik mirrors observed `ether3` traffic through TZSP to VM2 on UDP 37008. The documented wrapper runs `tzsp2pcap -f | suricata -r /dev/stdin`; source, build flags and full invocation are missing. The mirror does not include VM1-to-VM2 traffic switched inside the hypervisor. The traceroute and neighbor-table diagnosis in the setup notes is not accompanied by command-output screenshots.
 
-WireGuard encrypts the administration path between VMs. VM1 initiates to VM2 at the substituted underlay endpoint `192.0.2.20:51820`, with keepalive 25 documented. VM2 has no configured endpoint in the report. Screenshot S13 shows a recent handshake and transfers, not an SSH session or a quarantine test.
+WireGuard encrypts the administration path between VMs. VM1 initiates to VM2 at the lab underlay endpoint `192.168.3.254:51820`, with keepalive 25 documented. VM2 has no configured endpoint in the report. Screenshot S13 shows a recent handshake and transfers, not an SSH session or a quarantine test.
 
 ## Log and response flows
 

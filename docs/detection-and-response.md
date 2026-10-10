@@ -35,7 +35,7 @@ The documented firewall rule matches `src-address-list=quarantine` and `out-inte
 S15 displays the rule below. The protocol, negated port and options are reproduced from the historical rule. This is a documented historical excerpt, not a deployable configuration file:
 
 ```text
-alert tcp 192.0.2.10 any -> 192.0.2.20 !51820 (msg:"lateral movement vm1->vm2 isolate"; flow:to_server; sid:1000002; rev:1;)
+alert tcp 192.168.3.253 any -> 192.168.3.254 !51820 (msg:"lateral movement vm1->vm2 isolate"; flow:to_server; sid:1000002; rev:1;)
 ```
 
 `tcp` limits it to TCP, and `!51820` excludes **TCP destination port 51820**; it does not express an exception for UDP WireGuard. It is also broad: it does not distinguish every legitimate TCP service from lateral movement. `flow:to_server` describes flow direction, not proof of malicious initiation. These meanings follow [Suricata rule format](https://docs.suricata.io/en/suricata-7.0.12/rules/intro.html); the installed version is not established.

@@ -29,7 +29,7 @@ flowchart LR
     APP <-->|WireGuard: UDP 51820| PROXY
 ```
 
-The VMs share a virtual switch. Their direct traffic bypasses the router mirror, so Suricata does not observe that east-west path. The WireGuard edge denotes the VM2 host, not an Nginx feature. See [architecture](docs/architecture.md) for flows and consistently substituted addresses.
+The VMs share a virtual switch. Their direct traffic bypasses the router mirror, so Suricata does not observe that east-west path. The WireGuard edge denotes the VM2 host, not an Nginx feature. See [architecture](docs/architecture.md) for flows and lab addresses.
 
 ## Implemented behavior and evidence
 
@@ -49,7 +49,7 @@ IP matching links observations; it does not establish an attack or identify a pe
 
 The [seven-image portfolio selection](docs/portfolio-evidence.md) provides a short review of monitoring, WAF and IDS records, response outputs and network administration.
 
-Grafana overview with identifying address columns and browser details masked:
+Grafana overview with source address columns and counters visible:
 
 ![Grafana security overview with an event counter and log-source panels](assets/screenshots/s03-grafana-overview.png)
 
@@ -62,11 +62,11 @@ Grafana overview with identifying address columns and browser details masked:
 | [MikroTik blocklists](assets/screenshots/s24-router-blocklists.png) | List entries, creation times and selected timeouts |
 | [WireGuard status](assets/screenshots/s13-wireguard-status.png) | Handshake and transfer counters |
 
-The [selection guide](docs/portfolio-evidence.md) explains the role and limits of all 25 images, including service statuses useful for a Linux administration review. The [full gallery](assets/screenshots/README.md) retains the supporting images, overlapping views and historical ZAP screenshots. Counts are historical snapshots; the images do not establish a synchronized end-to-end test or source-IP equality.
+The [selection guide](docs/portfolio-evidence.md) explains the role and limits of all 25 images, including service statuses useful for a Linux administration review. The [full gallery](assets/screenshots/README.md) retains the supporting images, overlapping views and historical ZAP screenshots. Counts are historical snapshots. Source addresses can be compared across the visible rows; a synchronized end-to-end test record is still missing.
 
 ## Read the evidence
 
-Start with the [test matrix](docs/testing.md), [detection and response](docs/detection-and-response.md), and [controlled-test runbook](docs/evidence-runbook.md). The [screenshot gallery](assets/screenshots/README.md) includes all 25 reviewed copies: 23 with opaque masks over identifying fields and two with metadata removed only. Original reports and images remain private. The [Russian project report](docs/report.ru.md) describes the setup and test stages.
+Start with the [test matrix](docs/testing.md), [detection and response](docs/detection-and-response.md), and [controlled-test runbook](docs/evidence-runbook.md). The [screenshot gallery](assets/screenshots/README.md) includes all 25 reviewed copies: 19 with unchanged decoded pixels and six with small masks on password values or lab WAN endpoints. Original reports and images remain private. The [Russian project report](docs/report.ru.md) describes the setup and test stages.
 
 [Deployment](docs/deployment.md), [troubleshooting](docs/troubleshooting.md), [limitations](docs/limitations.md) and the [VM export checklist](docs/artifact-request.md) describe what is known and what is needed next. The [inventory](docs/material-inventory.md) separates available material from missing artifacts; [sanitization](docs/sanitization.md) records publication boundaries.
 

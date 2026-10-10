@@ -1,20 +1,16 @@
-# Preparation verification
+# File and documentation checks
 
-Local review on 2026-10-10. These checks concern documentation and reviewed screenshot copies only; no VM, router, notification, attack, response or rollback was run.
+Checks completed on 2026-10-11 cover the repository files and screenshot copies.
 
-- **Pass:** all 29 originals unchanged.
-- **Pass:** required documents and empty runtime-artifact directories.
-- **Pass:** standalone lab repository and no assigned license.
-- **Pass:** relative links and Markdown fences.
-- **Pass:** Mermaid nodes and edges checked as text; no rendering claim.
-- **Pass:** scoped heuristic secret and original-identity scans.
-- **Pass:** two service JPEG copies have unchanged decoded pixels and reviewed OCR.
-- **Pass:** all 25 source images reviewed.
-- **Pass:** all 23 masked PNG copies individually reviewed; OCR and secret checks passed.
-- **Pass:** PNG metadata removed; masked pixels are opaque black, and every pixel outside the masks is identical to the original.
+- All 29 original source files retain their SHA-256 values.
+- All 25 public copies have capture metadata removed.
+- Nineteen images have unchanged decoded pixels.
+- Six images have masks only on password values or lab WAN endpoints; all other pixels match the originals.
+- Local/private addresses, generic hostnames and user names, ports, paths, public WireGuard keys and event IDs remain readable.
+- Screenshot OCR and visual checks cover secret fields and remaining endpoint fragments.
+- Relative links, Markdown fences and the Mermaid diagram text are checked.
+- Text and metadata are checked for exposed credentials and unintended personal data.
 
-The [gallery](../assets/screenshots/README.md) includes all 25 reviewed copies. Keys, credential rows, identifying addresses/accounts and selected transaction identifiers are obscured with black rectangles. Unmodified originals and the detailed mask/checksum records remain private outside the repository.
+These checks do not validate the running VMs or router. Full correlation, Telegram delivery, firewall effect, cooldown and recovery still need the test records listed in [testing](testing.md).
 
-Screenshots are historical observations from different stages. Masked addresses prevent independent source-IP equality checks. Original configurations, scripts, raw events and a dashboard export are still missing; deployed behavior and reproducibility remain unverified.
-
-After adding future artifacts, repeat source integrity, links, scoped privacy/secret scanning and image review before staging.
+The [gallery](../assets/screenshots/README.md) and [selected evidence](portfolio-evidence.md) describe the visible results.

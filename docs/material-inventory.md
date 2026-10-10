@@ -1,6 +1,6 @@
 # Material inventory
 
-Received: four UTF-8 text files and 25 JPEG images. All were read or individually viewed. Original SHA-256 values were recorded outside this repository before edits, in the private workspace audit. Originals are unchanged. No `.conf`, `.yaml`, `.py`, shell program, RouterOS export, Grafana JSON or raw event file was available.
+Source material: four UTF-8 text reports and 25 JPEG screenshots. Runtime configuration files, Python programs, shell scripts, a RouterOS export, the Grafana dashboard JSON and raw events are not included yet.
 
 | ID | Available text | Meaning |
 | --- | --- | --- |

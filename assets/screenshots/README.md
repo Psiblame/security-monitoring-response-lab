@@ -1,8 +1,8 @@
 # Screenshot gallery
 
-All 25 source screenshots have reviewed public copies. Twenty-three PNG copies use opaque black rectangles over identifying fields; the two service-status JPEGs only had capture metadata removed. Unmasked pixels were compared with the originals and are unchanged. Original files remain private.
+The gallery contains 25 historical screenshots from different lab stages. Private addresses, generic system identities, paths, ports, event IDs and public WireGuard keys remain visible. Only password values and the lab's WAN endpoints are masked.
 
-These are historical observations from different stages, not one synchronized end-to-end test. Masked addresses cannot be used to independently confirm source-IP matching. See the [evidence index](../../docs/screenshots.md) and [test matrix](../../docs/testing.md).
+Nineteen copies have unchanged decoded pixels; six use small opaque masks. Capture metadata is removed. These images cover individual observations rather than one synchronized end-to-end test. See the [evidence index](../../docs/screenshots.md) and [test matrix](../../docs/testing.md).
 
 ## Short portfolio review
 
@@ -14,7 +14,7 @@ The complete historical gallery follows below.
 
 ![Grafana source panels and combined table](s02-grafana-source-panels.png)
 
-Four source panels and merged per-IP table visible. No query/export or delivery result. Address columns and the filter are masked. Visible counts do not establish exact source-IP matching or the queries used.
+Four source panels and merged per-IP table visible. No query/export or delivery result. Source address columns and the filter remain visible. Matching rows can be inspected; the actual query/export is still missing.
 
 ## S03 — Grafana security overview
 
@@ -74,13 +74,13 @@ Trap listener restarts and connection lines; no complete SSH exchange. Connectio
 
 ![Decoy configuration](s12-decoy-config.png)
 
-Decoy file with client/SSH sections; username differs from report wording. Entire credential rows are masked, including the fictional decoy passwords.
+Decoy file with client/SSH sections; username differs from report wording. Only the two password values are masked. The decoy users, host addresses, port and path remain visible.
 
 ## S13 — WireGuard handshake and transfer
 
 ![WireGuard handshake and transfer](s13-wireguard-status.png)
 
-WireGuard latest handshake and received/sent bytes; private key displayed as hidden. Handshake and transfer counters remain visible; no administrative SSH session or quarantine test is shown.
+WireGuard latest handshake and received/sent bytes; private key displayed as hidden. Public keys, the private endpoint, handshake and transfer counters remain visible. No administrative SSH session or quarantine test is shown.
 
 ## S14 — Suricata rule loading
 
@@ -110,13 +110,13 @@ Router quarantine list includes a VM address and honeypot-trap comment. Membersh
 
 ![Grafana table — alternate view](s18-grafana-table-alternate.png)
 
-Dashboard like S02 at a different scroll position. Separate rows, same layout. Overlaps S02 at a different scroll position; address columns are masked.
+Dashboard like S02 at a different scroll position. Separate rows, same layout. Overlaps S02 at a different scroll position; the source address columns remain visible.
 
 ## S19 — Nginx access events
 
 ![Nginx access events](s19-nginx-access-events.png)
 
-Nginx access-format output, HTTP methods/statuses and DVWA paths. HTTP methods, status codes, paths and timestamps remain visible.
+Nginx access-format output, HTTP methods/statuses and DVWA paths. HTTP methods, status codes, source addresses, paths and timestamps remain visible; only the lab WAN endpoint is masked.
 
 ## S20 — Suricata EVE events
 

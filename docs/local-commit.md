@@ -8,7 +8,7 @@ cd security-monitoring-response-lab
 git status --short
 ```
 
-Review [verification](verification.md), [sanitization](sanitization.md) and the relevant evidence before adding files. Keep original reports, unmasked screenshots, raw exports and private audit records outside this repository.
+Review [verification](verification.md), [sanitization](sanitization.md) and the relevant evidence before adding files. Keep original captures, credential-bearing raw exports and private audit records outside this repository.
 
 When adding reviewed artifacts, stage only the intended paths, then inspect the changes:
 

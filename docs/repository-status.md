@@ -1,6 +1,6 @@
 # Repository status and structure
 
-Documentation and all 25 public screenshot copies reviewed on 2026-10-10; original runtime artifacts are missing. Two JPEG copies have metadata removed and unchanged pixels. Twenty-three PNG copies use opaque masks over identifying fields, with every pixel outside the masks unchanged. Original files remain private. No license is assigned.
+This repository contains architecture, setup notes and 25 historical screenshots. Nineteen image copies have unchanged decoded pixels; six have small masks over password values or lab WAN endpoints. Original runtime artifacts are still missing. No license is assigned.
 
 ```text
 security-monitoring-response-lab/
@@ -16,6 +16,7 @@ security-monitoring-response-lab/
 │   ├── report.ru.md
 │   ├── artifact-request.md
 │   ├── material-inventory.md
+│   ├── portfolio-evidence.md
 │   ├── screenshots.md
 │   ├── sanitization.md
 │   ├── verification.md
@@ -35,7 +36,7 @@ security-monitoring-response-lab/
 ├── dashboards/.gitkeep
 ├── assets/screenshots/
 │   ├── README.md
-│   ├── s*.png (23 opaque-masked copies)
+│   ├── s*.png (23 PNG copies)
 │   ├── grafana-service-status.jpg
 │   └── loki-service-status.jpg
 └── samples/sanitized-events/.gitkeep

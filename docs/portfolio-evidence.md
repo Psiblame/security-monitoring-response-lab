@@ -2,7 +2,7 @@
 
 Seven screenshots provide a short first review of the lab's monitoring, WAF, IDS, response outputs and network administration. The full gallery preserves supporting material and historical context.
 
-These images come from different test stages. They support the visible observations below; they do not establish one synchronized end-to-end response test. Identifying fields are masked, so the public images cannot independently establish source-IP equality.
+These images come from different test stages. They support the visible observations below; they do not establish one synchronized end-to-end response test. Source addresses remain visible, making matching rows and entries readable. The screenshots still do not establish one synchronized test window.
 
 ## Start with these seven images
 
@@ -39,7 +39,7 @@ These ten images add detail for a technical discussion. They are optional for th
 
 | Evidence | Reason to retain it outside the first review |
 | --- | --- |
-| [S12 — Decoy configuration](../assets/screenshots/s12-decoy-config.png) | Credential rows are fully masked; limited standalone evidence |
+| [S12 — Decoy configuration](../assets/screenshots/s12-decoy-config.png) | Only password values are masked; host, account, port and path fields remain visible |
 | [S15 — Historical Suricata rule](../assets/screenshots/s15-historical-suricata-rule.png) | Shows the original TCP rule; see the [protocol limitation](detection-and-response.md) |
 | [S22 — ModSecurity warning](../assets/screenshots/s22-modsecurity-warning.png) | HTTP 200 warning; it is not a WAF denial |
 | [S07 — Combined Alloy/Loki status](../assets/screenshots/s07-alloy-loki-services.png) | Overlaps S08/S09 |

@@ -160,10 +160,10 @@ curl -sS --connect-timeout 3 --max-time 8 \
 
 PASS requires matching trap/reaction/list evidence, actual outgoing WAN drop with a healthy control, and preserved LAN/new admin/proxy access. Test an existing WAN flow separately. Describe WAN-only quarantine accurately.
 
-Selective recovery uses the actual VM1 address in place of this documentation alias:
+Selective recovery uses the actual VM1 address in place of this example address:
 
 ```text
-/ip firewall address-list remove [find list=quarantine address=192.0.2.10]
+/ip firewall address-list remove [find list=quarantine address=192.168.3.253]
 ```
 
 After checking the real flag/state lifecycle, remove only its corresponding local flag on VM2:
