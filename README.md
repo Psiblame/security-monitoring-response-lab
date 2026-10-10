@@ -45,9 +45,26 @@ Three response scenarios are described:
 
 IP matching links observations; it does not establish an attack or identify a person. The TCP banner trap is not a full SSH server, and WAN quarantine is not full network isolation.
 
+## Screenshot highlights
+
+Grafana overview with identifying address columns and browser details masked:
+
+![Grafana security overview with an event counter and log-source panels](assets/screenshots/s03-grafana-overview.png)
+
+| Evidence | Visible result |
+| --- | --- |
+| [Grafana source panels and combined table](assets/screenshots/s02-grafana-source-panels.png) | Four log-source panels and per-source counts |
+| [ModSecurity denials](assets/screenshots/s23-modsecurity-denials.png) | HTTP 403, CRS rule 949110 and request paths |
+| [Response-service journal](assets/screenshots/s10-response-journal.png) | Trap reaction and blocklist-addition messages |
+| [MikroTik quarantine](assets/screenshots/s17-router-quarantine.png) | Quarantine list membership |
+| [MikroTik blocklists](assets/screenshots/s24-router-blocklists.png) | List entries, creation times and selected timeouts |
+| [WireGuard status](assets/screenshots/s13-wireguard-status.png) | Handshake and transfer counters |
+
+The [full gallery](assets/screenshots/README.md) includes all 25 images and their limits. Counts are historical snapshots; duplicate images and different test stages are labelled. These screenshots do not establish a synchronized end-to-end test or unmask source-IP matching.
+
 ## Read the evidence
 
-Start with the [test matrix](docs/testing.md), [detection and response](docs/detection-and-response.md), and [controlled-test runbook](docs/evidence-runbook.md). Two unchanged-pixel service copies are in [assets/screenshots](assets/screenshots/README.md). The remaining 23 source images stay private because identifying details have not been masked. The [Russian project report](docs/report.ru.md) describes the setup and test stages.
+Start with the [test matrix](docs/testing.md), [detection and response](docs/detection-and-response.md), and [controlled-test runbook](docs/evidence-runbook.md). The [screenshot gallery](assets/screenshots/README.md) includes all 25 reviewed copies: 23 with opaque masks over identifying fields and two with metadata removed only. Original reports and images remain private. The [Russian project report](docs/report.ru.md) describes the setup and test stages.
 
 [Deployment](docs/deployment.md), [troubleshooting](docs/troubleshooting.md), [limitations](docs/limitations.md) and the [VM export checklist](docs/artifact-request.md) describe what is known and what is needed next. The [inventory](docs/material-inventory.md) separates available material from missing artifacts; [sanitization](docs/sanitization.md) records publication boundaries.
 

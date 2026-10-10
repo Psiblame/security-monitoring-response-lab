@@ -1,6 +1,6 @@
 # Repository status and structure
 
-Documentation reviewed on 2026-10-10; original runtime artifacts are missing. Twenty-five source images have been reviewed. Two safe copies are included with metadata removed and unchanged pixels. The other 23 originals remain private because identifying details have not been masked. No license is assigned.
+Documentation and all 25 public screenshot copies reviewed on 2026-10-10; original runtime artifacts are missing. Two JPEG copies have metadata removed and unchanged pixels. Twenty-three PNG copies use opaque masks over identifying fields, with every pixel outside the masks unchanged. Original files remain private. No license is assigned.
 
 ```text
 security-monitoring-response-lab/
@@ -35,6 +35,7 @@ security-monitoring-response-lab/
 ├── dashboards/.gitkeep
 ├── assets/screenshots/
 │   ├── README.md
+│   ├── s*.png (23 opaque-masked copies)
 │   ├── grafana-service-status.jpg
 │   └── loki-service-status.jpg
 └── samples/sanitized-events/.gitkeep
