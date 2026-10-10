@@ -47,20 +47,22 @@ IP matching links observations; it does not establish an attack or identify a pe
 
 ## Screenshot highlights
 
+The [seven-image portfolio selection](docs/portfolio-evidence.md) provides a short review of monitoring, WAF and IDS records, response outputs and network administration.
+
 Grafana overview with identifying address columns and browser details masked:
 
 ![Grafana security overview with an event counter and log-source panels](assets/screenshots/s03-grafana-overview.png)
 
 | Evidence | Visible result |
 | --- | --- |
-| [Grafana source panels and combined table](assets/screenshots/s02-grafana-source-panels.png) | Four log-source panels and per-source counts |
 | [ModSecurity denials](assets/screenshots/s23-modsecurity-denials.png) | HTTP 403, CRS rule 949110 and request paths |
+| [Suricata fast.log](assets/screenshots/s21-suricata-fast-events.png) | Signature, classification and priority 3; these events do not establish blocking |
 | [Response-service journal](assets/screenshots/s10-response-journal.png) | Trap reaction and blocklist-addition messages |
 | [MikroTik quarantine](assets/screenshots/s17-router-quarantine.png) | Quarantine list membership |
 | [MikroTik blocklists](assets/screenshots/s24-router-blocklists.png) | List entries, creation times and selected timeouts |
 | [WireGuard status](assets/screenshots/s13-wireguard-status.png) | Handshake and transfer counters |
 
-The [full gallery](assets/screenshots/README.md) includes all 25 images and their limits. Counts are historical snapshots; duplicate images and different test stages are labelled. These screenshots do not establish a synchronized end-to-end test or unmask source-IP matching.
+The [selection guide](docs/portfolio-evidence.md) explains the role and limits of all 25 images, including service statuses useful for a Linux administration review. The [full gallery](assets/screenshots/README.md) retains the supporting images, overlapping views and historical ZAP screenshots. Counts are historical snapshots; the images do not establish a synchronized end-to-end test or source-IP equality.
 
 ## Read the evidence
 

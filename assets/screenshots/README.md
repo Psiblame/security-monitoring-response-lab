@@ -4,6 +4,12 @@ All 25 source screenshots have reviewed public copies. Twenty-three PNG copies u
 
 These are historical observations from different stages, not one synchronized end-to-end test. Masked addresses cannot be used to independently confirm source-IP matching. See the [evidence index](../../docs/screenshots.md) and [test matrix](../../docs/testing.md).
 
+## Short portfolio review
+
+Start with the [seven-image selection](../../docs/portfolio-evidence.md): Grafana overview, WAF denials, Suricata events, response journal, router quarantine, router blocklists and WireGuard status. The guide also explains which images add supporting detail and which overlap or have limited evidential value.
+
+The complete historical gallery follows below.
+
 ## S02 — Grafana source panels and combined table
 
 ![Grafana source panels and combined table](s02-grafana-source-panels.png)
